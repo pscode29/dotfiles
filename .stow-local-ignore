@@ -1,0 +1,29 @@
+# Stow ignores following files from stowing. 
+# Comments and blank lines are allowed.
+
+# My list
+install.sh
+
+# Default list (need this now because existence of this file ignores the stow defaults)
+# Find the default list here - https://www.gnu.org/software/stow/manual/html_node/Types-And-Syntax-Of-Ignore-Lists.html
+RCS
+.+,v
+
+CVS
+\.\#.+       # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
+
+\.git
+\.gitignore
+\.gitmodules
+
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
+
+^/README.*
+^/LICENSE.*
+^/COPYING
