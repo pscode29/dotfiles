@@ -13,7 +13,7 @@ rm -rf ~/.local/share/nvim
 mkdir .config
 
 # Brew install
-brew install neovim starship tmux stow
+brew install neovim starship tmux stow ripgrep
 brew install --cask alacritty
 
 # stow everything
