@@ -14,7 +14,7 @@ draw_bold_text_with_bright_colors = true
 # Default colors
 [colors.primary]
 background = '#000000'
-foreground = '#ffffff'
+foreground = '#27ff00'
 
 [colors.cursor]
 text = '#F81CE5'
@@ -87,11 +87,10 @@ save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 [window]
-decorations = "transparent"
-opacity = 1.0
-startup_mode = "windowed"
-title = "OneHotCode"
+decorations = "Buttonless"
+opacity = 0.9 # 1.0 for opaque 
+startup_mode = "Maximized"
 
 [window.padding]
-x = 10
-y = 30
+x = 0
+y = 2
