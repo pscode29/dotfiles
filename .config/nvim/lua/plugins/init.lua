@@ -6,7 +6,10 @@ return {
       require "configs.conform"
     end,
   },
-
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
   {
     "neovim/nvim-lspconfig",
     config = function()
