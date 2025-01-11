@@ -1,4 +1,9 @@
 ###############################################################################
+# Put homebrew installed softwares in path, never had to do it before.
+###############################################################################
+export PATH="/opt/homebrew/bin:$PATH"  # For Apple Silicon
+export PATH="/usr/local/bin:$PATH"    # For Intel Macs
+###############################################################################
 # pyenv settings:
 ###############################################################################
 export PYENV_ROOT="$HOME/.pyenv"
@@ -8,7 +13,13 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 ###############################################################################
-eval "$(/opt/homebrew/bin/brew shellenv)"
+alias ga="git add"
+alias gc="git commit -m"
+alias gs="git status"
+alias gp="git push origin -u HEAD"
+alias gpom="git pull origin main"
+# Delete all local branches except main
+alias gdab="git branch | grep -v 'main' | xargs git branch -D"
 ###############################################################################
 # Starship settings:
 ###############################################################################

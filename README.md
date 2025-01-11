@@ -1,15 +1,20 @@
-# Install and stow
-
+## Step 1: Install softwares and stow dotfiles
 ```
 ./install.sh
 ```
 
-# Install Mason plugins
+## Step 2: Update NvChad
+- Open Neovim
+- Run `:Lazy sync`
+- Run `:MasonInstallAll`
 
-- Run `:MasonInstallAll` in Neovim
+That's all.
 
-# Install Tmux plugins
+## Additional Info
 
+# How to install a new Tmux plugin
+- Update .tmux.conf with new plugin detail
+- Run
 ```
 cd ~
 # Run tmux

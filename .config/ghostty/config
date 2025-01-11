@@ -1,0 +1,35 @@
+# Theme settings
+theme = dark:vesper,light:catppuccin-latte
+background = #0B1215
+background-opacity = 0.90
+background-blur-radius = 20
+bold-is-bright = true
+
+# window settings
+macos-titlebar-style = hidden
+window-decoration = true
+window-theme = auto
+window-padding-color = background
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = false
+window-colorspace = "display-p3"
+adjust-cell-height = 10%
+
+macos-icon = "custom-style"
+macos-icon-frame = "plastic"
+macos-icon-ghost-color = "#FFA500"
+macos-icon-screen-color = "#FFA500"
+
+# Font settings
+font-family = "IosevkaTerm Nerd Font Mono"
+font-size = 16
+cursor-color = #FFA500
+font-feature = +liga
+cursor-style = block
+
+
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+

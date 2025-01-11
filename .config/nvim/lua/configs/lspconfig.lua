@@ -7,7 +7,7 @@ local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
 -- Front end servers
-local servers = { "html", "cssls", "tsserver" }
+local servers = { "html", "cssls", "ts_ls" }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -27,7 +27,7 @@ for _, lsp in ipairs(python_servers) do
   }
 end
 
--- golang servers
+-- Golang servers
 lspconfig.gopls.setup {
   on_attach = on_attach,
   on_init = on_init,
@@ -44,4 +44,12 @@ lspconfig.gopls.setup {
       },
     },
   },
+}
+
+-- Terraform server
+lspconfig.terraformls.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = { "tf", "tfvars", "terraform" },
 }
