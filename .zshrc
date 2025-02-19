@@ -25,7 +25,6 @@ alias gdab="git branch | grep -v 'main' | xargs git branch -D"
 ###############################################################################
 eval "$(starship init zsh)"
 ###############################################################################
-# SDKMAN - Below is auto added by SDKMAN
+# uv settings:
 ###############################################################################
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-###############################################################################
+. "$HOME/.local/bin/env"

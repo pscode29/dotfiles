@@ -21,7 +21,7 @@ error() {
 
 # Remove old backups
 log "Removing older backups..."
-find ~ -maxdepth 1 -name "*$BACKUP_PATTERN" -exec rm -rf {} + || error "Failed to remove older backups."
+find ~ -maxdepth 1 -name "*$BACKUP_PATTERN" -exec rm -rf {} +
 log "Older backups removed."
 
 # Backup and clean old configuration
@@ -36,13 +36,13 @@ mkdir -p "$CONFIG_DIR"
 
 # Install dependencies with Homebrew
 log "Installing dependencies via Homebrew..."
-brew install neovim starship tmux stow ripgrep || error "Failed to install packages."
-brew install --cask ghostty || error "Failed to install ghostty."
+brew install neovim starship tmux stow ripgrep fzf
+brew install --cask ghostty
 
 # Install Tmux Plugin Manager
 log "Installing Tmux Plugin Manager..."
 if [[ ! -d "$TMUX_PLUGIN_DIR" ]]; then
-  git clone https://github.com/tmux-plugins/tpm "$TMUX_PLUGIN_DIR" || error "Failed to clone TPM."
+  git clone https://github.com/tmux-plugins/tpm "$TMUX_PLUGIN_DIR"
 else
   log "Tmux Plugin Manager is already installed."
 fi
@@ -50,8 +50,8 @@ fi
 # Stow dotfiles
 if [[ -d "$DOTFILES_DIR" ]]; then
   log "Stowing dotfiles..."
-  cd "$DOTFILES_DIR" || error "Failed to change directory to $DOTFILES_DIR."
-  stow . || error "Failed to stow dotfiles."
+  cd "$DOTFILES_DIR"
+  stow .
 else
   error "Dotfiles directory not found: $DOTFILES_DIR"
 fi
@@ -60,29 +60,5 @@ fi
 # log "Unstowing dotfiles..."
 # stow -D .
 
-cd ~ || error "Failed to return to the home directory."
-
-# Check and start tmux session if not running
-if ! tmux info &>/dev/null; then
-  log "No tmux session detected. Starting a new tmux session..."
-  tmux new-session -d -s auto_tmux_session || error "Failed to start tmux session."
-else
-  log "Tmux is already running."
-fi
-
-# Reload tmux configuration
-log "Reloading tmux configuration..."
-tmux source-file "$TMUX_CONF" || error "Failed to reload tmux configuration."
-
-# Install tmux plugins
-log "Installing tmux plugins..."
-tmux run-shell "$TMUX_PLUGIN_DIR/bin/install_plugins" || error "Failed to install tmux plugins."
-
-log "Tmux plugins installed successfully."
-
-# Exit tmux server
-log "Exiting tmux server..."
-tmux kill-server || error "Failed to exit tmux server."
-
-log "Tmux server exited successfully."
+cd ~
 log "Setup completed successfully."

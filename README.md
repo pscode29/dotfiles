@@ -4,9 +4,14 @@
 ```
 
 ## Step 2: Update NvChad
-- Open Neovim
-- Run `:Lazy sync`
-- Run `:MasonInstallAll`
+- Open tmux session and install plugins:
+```
+tmux
+C-a I
+```
+- Open Neovim and install plugins and LSPs etc:
+`:Lazy sync`
+`:MasonInstallAll`
 
 That's all.
 
