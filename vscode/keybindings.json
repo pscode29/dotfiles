@@ -1,0 +1,82 @@
+[
+    // When in file explorer or list, use enter to select
+    {
+        "key": "enter",
+        "command": "list.select",
+        "when": "listFocus && !inputFocus"
+    },
+    // When in file explore, cmd+enter to rename file
+    {
+        "key": "cmd+enter",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    // Jetbrains like move cursor backwards, old habit
+    {
+        "command": "workbench.action.navigateBack",
+        "key": "cmd+["
+    },
+    // Jetbrains like move cursor backwards, old habit
+    {
+        "command": "workbench.action.navigateForward",
+        "key": "cmd+]"
+    },
+    // Use cmd+r for find and replace
+    {
+        "key": "cmd+r",
+        "command": "editor.action.startFindReplaceAction",
+        "when": "editorFocus || editorIsOpen"
+    },
+    // Remove default VSCode settings for find and replace
+    {
+        "key": "alt+cmd+f",
+        "command": "-editor.action.startFindReplaceAction",
+        "when": "editorFocus || editorIsOpen"
+    },
+    // Disable cmd+r from other actions
+    {
+        "key": "cmd+r",
+        "command": "-workbench.action.reloadWindow",
+        "when": "isDevelopment"
+    },
+    // Disable cmd+r from other actions
+    {
+        "key": "cmd+r",
+        "command": "-python.refreshTensorBoard",
+        "when": "python.hasActiveTensorBoardSession"
+    },
+    // Disable cmd+r from other actions
+    {
+        "key": "cmd+r",
+        "command": "-workbench.action.terminal.runRecentCommand",
+        "when": "accessibilityModeEnabled && terminalFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalFocus && terminalProcessSupported || accessibilityModeEnabled && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+    },
+    // Reload window
+    {
+        "key": "alt+r",
+        "command": "workbench.action.reloadWindow",
+        "when": "isDevelopment"
+    },
+    // Neotree like jump from file explorer to editor window
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.moveEditorToFirstGroup",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    // Keep native shortcut also as it helps in split windows
+    // e.g. cmd+1 for first window and cmd+2 for second window and so on
+    {
+        "key": "cmd+1",
+        "command": "workbench.action.focusFirstEditorGroup"
+    },
+    {
+        "key": "alt+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+]
