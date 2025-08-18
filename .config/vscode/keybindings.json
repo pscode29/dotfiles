@@ -1,0 +1,71 @@
+// This file hot reloads
+[
+    // jump to the next/previous editor
+    {
+        "key": "tab",
+        "command": "workbench.action.nextEditor",
+        "when": "neovim.mode == normal && !terminalFocus && !listFocus && !suggestWidgetVisible && !inQuickOpen && !inputBoxFocus"
+    },
+    {
+        "key": "shift+tab",
+        "command": "workbench.action.previousEditor",
+        "when": "neovim.mode == normal && !terminalFocus && !listFocus && !suggestWidgetVisible && !inQuickOpen && !inputBoxFocus"
+    },
+    // jump forward or backward in code
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.navigateForward"
+    },
+    // jump across windows
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown"
+    },
+    // hide notifications, when notifications appear
+    {
+        "key": "escape",
+        "command": "notifications.hideToasts",
+        "when": "notificationToastsVisible"
+    },
+    // toggle sidebar
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "neovim.mode == normal && (editorTextFocus || terminalFocus)"
+    },
+    // close terminal, when focus is on terminal
+    {
+        "key": "Escape",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus"
+    },
+    // move down the list to search result
+    {
+        "key": "ctrl+n",
+        "command": "search.action.focusNextSearchResult",
+        "when": "searchViewletVisible"
+    },
+    // move up the list to search result
+    // this is not working yet TODO later
+    {
+        "key": "ctrl+p",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "searchViewletVisible"
+    }
+]
